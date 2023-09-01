@@ -1,17 +1,16 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-export const mailer = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    user: "contact@metalgroundai.com",
-    pass: "ajmdohrkdnytkgql",
-  },
-});
-
 export const GET = async (req: Request) => {
+  const mailer = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: "contact@metalgroundai.com",
+      pass: "ajmdohrkdnytkgql",
+    },
+  });
   try {
     const data = await mailer.sendMail({
       from: '"VIVASYNTH" <contact@metalgroundai.com>',
