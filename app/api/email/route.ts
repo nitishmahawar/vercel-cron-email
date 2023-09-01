@@ -10,6 +10,7 @@ export const GET = async (req: Request) => {
       text: "Example of vercel cron job.",
       html: `<h1>Vercel Cron 1 Min</h1>`,
     });
+
     return new NextResponse(JSON.stringify(data));
   } catch (error: any) {
     return new NextResponse(error.message, { status: 501 });
